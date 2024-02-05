@@ -1,4 +1,4 @@
-package com.sample.store.data
+package com.sample.store.data.preference.encrypted
 
 import android.os.Bundle
 import android.widget.Toast
@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,23 +22,16 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = Color.White,
                 ) {
-
+                    MainScreen()
                 }
             }
         }
     }
 }
 
-private fun ComponentActivity.showToast(message: String) {
-    Toast.makeText(this, message, Toast.LENGTH_LONG).show()
-}
-
-@Preview
 @Composable
-fun PatternPreview() {
-
-    MaterialTheme {
-
-    }
-
+fun MainScreen(
+    viewModel: MainViewModel = hiltViewModel()
+) {
+   viewModel.saveUserInfo()
 }

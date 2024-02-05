@@ -54,6 +54,7 @@ dependencies {
 //    implementation(project(":pattern-lock-screen"))
     implementation(project(":encrypted-preference-data-store"))
 
+    implementation(libs.androidx.datastore.preferences)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.compose.ui)
